@@ -60,3 +60,4 @@ else:
                     # Handle other unexpected errors
 
                     st.error(f"An unexpected error occurred: {e}")
+
