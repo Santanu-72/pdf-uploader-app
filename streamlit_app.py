@@ -6,7 +6,7 @@ import time
 
 # PASTE YOUR N8N PRODUCTION WEBHOOK URL HERE
 # This is the 'Production URL' from your n8n Webhook node
-N8N_WEBHOOK_URL = "http://localhost:5678/webhook-test/pdf-receiver"
+N8N_WEBHOOK_URL = "http://localhost:5678/webhook/pdf-receiver"
 
 # --- App Layout ---
 st.set_page_config(page_title="PDF Submission Portal", layout="centered")
@@ -15,7 +15,7 @@ st.title("📄 PDF Submission Portal")
 st.write("Upload your PDF document below. A confirmation email will be sent upon receipt.")
 
 # Check if the webhook URL has been changed from default
-if N8N_WEBHOOK_URL == "http://localhost:5678/webhook-test/pdf-receiver":
+if N8N_WEBHOOK_URL == "http://localhost:5678/webhook/pdf-receiver":
     st.error("Error: App is not configured. Please update the N8N_WEBHOOK_URL in the code.")
 else:
     # File Uploader
@@ -58,4 +58,5 @@ else:
                     st.error(f"An error occurred while connecting to the server: {e}")
                 except Exception as e:
                     # Handle other unexpected errors
+
                     st.error(f"An unexpected error occurred: {e}")
